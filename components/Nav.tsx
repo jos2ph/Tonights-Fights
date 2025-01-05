@@ -10,7 +10,7 @@ import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 const Nav = () => {
   return (
     <NavigationMenu>
-      <NavigationMenuList>
+      <NavigationMenuList className="p-8">
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
