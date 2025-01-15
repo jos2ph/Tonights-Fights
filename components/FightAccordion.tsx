@@ -1,11 +1,10 @@
+"use client";
+
 import * as React from "react";
-import cardData from "@/app/data/mmaData";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -17,15 +16,20 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-export function MMA() {
+export default function MMA({ mmaData }) {
+  if (!Array.isArray(mmaData)) {
+    console.error("Invalid data passed to MMA component:", mmaData);
+    return <p>No data available</p>;
+  }
+
   return (
     <Card className="w-[400px] sm:w-full sm:h-auto">
       <CardHeader>
-        <CardTitle>Upcoming Fights</CardTitle>
+        <CardTitle>Upcoming MMA Fights</CardTitle>
         <CardDescription>Click to expand and contract.</CardDescription>
       </CardHeader>
       <CardContent>
-        {cardData.map(({ title, date, link, fights }, index) => (
+        {mmaData.map(({ title, date, fights }, index) => (
           <Accordion key={index} type="single" collapsible>
             <AccordionItem value={`item-${index}`}>
               <AccordionTrigger className="text-xl font-extrabold tracking-tight lg:text-xl">
@@ -105,9 +109,6 @@ export function MMA() {
           </Accordion>
         ))}
       </CardContent>
-      <CardFooter className="flex justify-between"></CardFooter>
     </Card>
   );
 }
-
-export default MMA;

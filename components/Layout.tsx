@@ -1,5 +1,4 @@
 // components/Layout.tsx
-import Nav from "./Nav";
 import Footer from "./Footer";
 
 interface LayoutProps {
@@ -8,9 +7,12 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col text-center min-h-screen">
       <header>
-        <Nav />
+        <h1 className="py-4 border-b cursor-pointer">
+          <b>Something ChatBot -</b> Your Mobile ASE Certified Automotive Tech
+          Assistant - Try it <b>FREE!</b>
+        </h1>
       </header>
       <main className="flex-grow">{children}</main>
       <footer className="">
