@@ -16,7 +16,33 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-export default function MMA({ mmaData }) {
+// Define types for the fighter and fight data
+interface Fighter {
+  name: string;
+  picture: string;
+  country: string;
+  record: string;
+  link: string;
+}
+
+interface Fight {
+  weight: string;
+  fighterA: Fighter;
+  fighterB: Fighter;
+}
+
+interface MMAData {
+  title: string;
+  date: string;
+  fights: Fight[];
+}
+
+// Define the component props type
+interface MMAProps {
+  mmaData: MMAData[];
+}
+
+export default function MMA({ mmaData }: MMAProps) {
   if (!Array.isArray(mmaData)) {
     console.error("Invalid data passed to MMA component:", mmaData);
     return <p>No data available</p>;
@@ -24,41 +50,42 @@ export default function MMA({ mmaData }) {
 
   return (
     <Card className="w-[400px] sm:w-full sm:h-auto">
-      <CardHeader>
+      <CardHeader className="text-left px-12">
         <CardTitle>Upcoming MMA Fights</CardTitle>
-        <CardDescription>Click to expand and contract.</CardDescription>
+        <CardDescription>Click to expand and contract</CardDescription>
       </CardHeader>
       <CardContent>
         {mmaData.map(({ title, date, fights }, index) => (
           <Accordion key={index} type="single" collapsible>
             <AccordionItem value={`item-${index}`}>
-              <AccordionTrigger className="text-xl font-extrabold tracking-tight lg:text-xl">
-                {title}
-                <br />
+              <AccordionTrigger className="text-xl font-extrabold tracking-tight lg:text-xl px-4">
                 {date}
+                <br />
+                {title}
               </AccordionTrigger>
-              <AccordionContent className="px-8">
-                <div className="space-y-4">
+              <AccordionContent>
+                <div className="space-y-6">
                   {fights.map((fight, fightIndex) => (
-                    <div key={fightIndex} className="py-2">
-                      <h3 className="font-semibold text-lg">
+                    <div key={fightIndex} className="py-6">
+                      {/* Weight Division */}
+                      <h3 className="font-bold text-lg text-center">
                         {fight.weight} lb Division
                       </h3>
-                      <div className="flex justify-between items-center gap-4">
+                      <div className="flex justify-center items-center gap-6">
                         {/* Fighter A */}
-                        <div className="flex items-center gap-2">
+                        <div className="flex flex-col items-center gap-2 flex-1">
                           <Image
                             src={fight.fighterA.picture}
                             alt={fight.fighterA.name}
-                            width={81}
-                            height={81}
+                            width={120}
+                            height={120}
                             className="rounded-lg"
                           />
                           <a
                             href={fight.fighterA.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-white hover:underline"
+                            className="text-white hover:underline font-bold flex items-center gap-2"
                           >
                             <Image
                               src={fight.fighterA.country}
@@ -67,27 +94,31 @@ export default function MMA({ mmaData }) {
                               height={24}
                               className="rounded-sm"
                             />
-                            {fight.fighterA.name} <br />({fight.fighterA.record}
-                            )
+                            <span>{fight.fighterA.name}</span>
                           </a>
+                          <span className="text-sm font-extrabold tracking-tight text-muted-foreground">
+                            ({fight.fighterA.record})
+                          </span>
                         </div>
 
-                        <span className="text-lg">vs</span>
+                        <div className="text-4xl font-semibold tracking-tight text-center">
+                          vs
+                        </div>
 
                         {/* Fighter B */}
-                        <div className="flex items-center gap-2">
+                        <div className="flex flex-col items-center gap-2 flex-1">
                           <Image
                             src={fight.fighterB.picture}
                             alt={fight.fighterB.name}
-                            width={81}
-                            height={81}
+                            width={120}
+                            height={120}
                             className="rounded-lg"
                           />
                           <a
                             href={fight.fighterB.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-white hover:underline"
+                            className="text-white hover:underline font-bold flex items-center gap-2"
                           >
                             <Image
                               src={fight.fighterB.country}
@@ -96,9 +127,11 @@ export default function MMA({ mmaData }) {
                               height={24}
                               className="rounded-sm"
                             />
-                            {fight.fighterB.name} <br />({fight.fighterB.record}
-                            )
+                            <span>{fight.fighterB.name}</span>
                           </a>
+                          <span className="text-sm font-extrabold tracking-tight text-muted-foreground">
+                            ({fight.fighterB.record})
+                          </span>
                         </div>
                       </div>
                     </div>

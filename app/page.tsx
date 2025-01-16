@@ -32,7 +32,7 @@ export default async function Home() {
               information.
             </h1>
             <p className="leading-16 py-4 text-center text-muted-foreground text-lg">
-              Currently displaying One FC, UFC, and RIZIN.
+              Currently displaying One FC, UFC,<br></br>RIZIN and more.
             </p>
             <br />
             <br />

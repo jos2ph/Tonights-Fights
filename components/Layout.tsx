@@ -10,7 +10,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className="flex flex-col text-center min-h-screen">
       <header>
         <h1 className="py-4 border-b cursor-pointer">
-          <b>Something ChatBot -</b> Your Mobile ASE Certified Automotive Tech
+          <b>AI Chatbot Project -</b> Your Mobile ASE Certified Automotive Tech
           Assistant - Try it <b>FREE!</b>
         </h1>
       </header>
