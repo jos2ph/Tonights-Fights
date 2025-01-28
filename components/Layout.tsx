@@ -10,12 +10,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className="flex flex-col text-center min-h-screen">
       <header>
         <h1 className="py-4 border-b cursor-pointer">
-          <b>AI Chatbot Project -</b> Your Mobile ASE Certified Automotive Tech
-          Assistant - Try it <b>FREE!</b>
+          <a href="mailto:contact.jtor@gmail.com">
+            <b>Need Advertising?</b> This space could be yours, reserve your
+            adspace today -<b> Email Me!</b>
+          </a>
         </h1>
       </header>
       <main className="flex-grow">{children}</main>
-      <footer className="">
+      <footer>
         <Footer />
       </footer>
     </div>

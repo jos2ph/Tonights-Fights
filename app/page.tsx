@@ -32,11 +32,13 @@ export default async function Home() {
               information.
             </h1>
             <p className="leading-16 py-4 text-center text-muted-foreground text-lg">
-              Currently displaying One FC, UFC,<br></br>RIZIN and more.
+              Currently displaying One FC, UFC,
+              <br />
+              RIZIN and more.
             </p>
             <br />
             <br />
-            <div className="flex sm:justify-center items-start gap-3 w-full">
+            <div className="flex justify-center items-center gap-3 w-full px-4 sm:px-0">
               <Suspense fallback={<div>Loading fights...</div>}>
                 <MMA mmaData={mmaData} />
               </Suspense>

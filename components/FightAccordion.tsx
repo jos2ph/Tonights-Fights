@@ -49,19 +49,18 @@ export default function MMA({ mmaData }: MMAProps) {
   }
 
   return (
-    <Card className="w-[400px] sm:w-full sm:h-auto">
-      <CardHeader className="text-left px-12">
-        <CardTitle>Upcoming MMA Fights</CardTitle>
+    <Card className="w-[400px] sm:w-full sm:h-auto sm:pb-6">
+      <CardHeader className="border-b mb-4">
+        <CardTitle>🌎 Upcoming MMA Fights</CardTitle>
         <CardDescription>Click to expand and contract</CardDescription>
       </CardHeader>
       <CardContent>
         {mmaData.map(({ title, date, fights }, index) => (
           <Accordion key={index} type="single" collapsible>
             <AccordionItem value={`item-${index}`}>
-              <AccordionTrigger className="text-xl font-extrabold tracking-tight lg:text-xl px-4">
-                {date}
-                <br />
-                {title}
+              <AccordionTrigger className="flex flex-col text-xl font-extrabold tracking-tight lg:text-xl px-4 pb-6">
+                <div className="text-muted-foreground text-lg">{date}</div>
+                <div className="sm:text-lg">{title}</div>
               </AccordionTrigger>
               <AccordionContent>
                 <div className="space-y-6">
