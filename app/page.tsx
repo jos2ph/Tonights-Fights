@@ -4,7 +4,7 @@ import { Suspense } from "react";
 
 export default async function Home() {
   try {
-    const response = await fetch("https://mmafightcardsapi.adaptable.app/", {
+    const response = await fetch("https://mma-fights-api-production.up.railway.app/", {
       cache: "no-store",
       headers: {
         "Content-Type": "application/json",
