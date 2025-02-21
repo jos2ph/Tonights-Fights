@@ -19,43 +19,45 @@ import {
 // Define types for the fighter and fight data
 interface Fighter {
   name: string;
-  picture: string;
-  country: string;
   record: string;
+  country: string;
+  picture: string;
   link: string;
 }
 
 interface Fight {
   weight: string;
+  main: boolean;
   fighterA: Fighter;
   fighterB: Fighter;
 }
 
-interface MMAData {
+interface BoxingEvent {
   title: string;
   date: string;
+  link: string;
   fights: Fight[];
 }
 
 // Define the component props type
-interface MMAProps {
-  mmaData: MMAData[];
+interface BoxingProps {
+  boxingData: BoxingEvent[];
 }
 
-export default function MMA({ mmaData }: MMAProps) {
-  if (!Array.isArray(mmaData)) {
-    console.error("Invalid data passed to MMA component:", mmaData);
+export default function Boxing({ boxingData }: BoxingProps) {
+  if (!Array.isArray(boxingData)) {
+    console.error("Invalid data passed to Boxing component:", boxingData);
     return <p>No data available</p>;
   }
 
   return (
     <Card className="w-[400px] sm:w-full sm:h-auto sm:pb-6">
       <CardHeader className="border-b mb-4">
-        <CardTitle>🌎 Upcoming MMA Events</CardTitle>
+        <CardTitle>🥊 Upcoming Boxing Events</CardTitle>
         <CardDescription>Click to expand and contract</CardDescription>
       </CardHeader>
       <CardContent>
-        {mmaData.map(({ title, date, fights }, index) => (
+        {boxingData.map(({ title, date, link, fights }, index) => (
           <Accordion key={index} type="single" collapsible>
             <AccordionItem value={`item-${index}`}>
               <AccordionTrigger className="flex flex-col text-xl font-extrabold tracking-tight lg:text-xl px-4 pb-6">
