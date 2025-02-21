@@ -32,13 +32,7 @@ export default async function Home() {
 
     const boxingResponseData = await boxingResponse.json();
 
-    const boxingData = boxingResponseData.map(event => ({
-      ...event,
-      fights: event.fights.map(fight => ({
-        ...fight,
-        details: fight 
-      }))
-    }));
+    const boxingData = boxingResponseData;
 
 
     return (
