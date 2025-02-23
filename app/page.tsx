@@ -31,9 +31,7 @@ export default async function Home() {
     }
 
     const boxingResponseData = await boxingResponse.json();
-
     const boxingData = boxingResponseData;
-
 
     return (
       <div className="font-[family-name:var(--font-geist-sans)]">
@@ -44,37 +42,37 @@ export default async function Home() {
             <h1 className="text-4xl font-extrabold tracking-tight text-center lg:text-5xl">
               Your go-to source
               <br />
-              for MMA and Boxing event
+              for Boxing and MMA
               <br />
-              information.
+              event information.
             </h1>
             <p className="leading-16 py-4 text-center text-muted-foreground text-lg">
-              Currently displaying One FC, UFC, RIZIN, and more for MMA,
+              Your #1 source for the latest
               <br />
-              and boxing events as well.
+            fight card information.
             </p>
             <br />
             <br />
             
-            {/* MMA Section */}
-            <div className="flex justify-center items-center gap-3 w-full px-4 sm:px-0">
-              <Suspense fallback={<div>Loading fights...</div>}>
-                <MMA mmaData={mmaData} />
-              </Suspense>
-            </div>
-            
-            <br />
-            <br />
-            
-            {/* Boxing Section */}
-            <div className="flex justify-center items-center gap-3 w-full px-4 sm:px-0">
-              {boxingData && boxingData.length > 0 ? (
-                <Suspense fallback={<div>Loading fights...</div>}>
-                  <Boxing boxingData={boxingData} />
+            {/* Flex container for side-by-side layout */}
+            <div className="flex flex-col sm:flex-row gap-6 w-full px-4 sm:px-0">
+              {/* MMA Section */}
+              <div className="w-full sm:w-1/2">
+                <Suspense fallback={<div>Loading MMA fights...</div>}>
+                  <MMA mmaData={mmaData} />
                 </Suspense>
-              ) : (
-                <div className="text-center text-red-500">No boxing data available at this time.</div>
-              )}
+              </div>
+
+              {/* Boxing Section */}
+              <div className="w-full sm:w-1/2">
+                {boxingData && boxingData.length > 0 ? (
+                  <Suspense fallback={<div>Loading boxing fights...</div>}>
+                    <Boxing boxingData={boxingData} />
+                  </Suspense>
+                ) : (
+                  <div className="text-center text-red-500">No boxing data available at this time.</div>
+                )}
+              </div>
             </div>
           </Layout>
         </main>

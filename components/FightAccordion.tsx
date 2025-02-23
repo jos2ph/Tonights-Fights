@@ -51,8 +51,8 @@ export default function MMA({ mmaData }: MMAProps) {
   return (
     <Card className="w-[400px] sm:w-full sm:h-auto sm:pb-6">
       <CardHeader className="border-b mb-4">
-        <CardTitle>🌎 Upcoming MMA Events</CardTitle>
-        <CardDescription>Click to expand and contract</CardDescription>
+        <CardTitle>🤼‍♂️ Upcoming MMA Events</CardTitle>
+        <CardDescription>UFC, ONE FC, RIZIN, PFL, Bellator</CardDescription>
       </CardHeader>
       <CardContent>
         {mmaData.map(({ title, date, fights }, index) => (

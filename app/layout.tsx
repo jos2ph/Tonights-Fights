@@ -15,8 +15,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Tonight's Fights 🤼 | Premiere MMA Event Schedule",
-  description: "Global Mixed Martial Arts Event Information",
+  title: "Tonight's Fights 🌎 | Combat Sports Event Schedule",
+  description: "Global Combat Sports Event Information",
 };
 
 export default function RootLayout({
