@@ -49,13 +49,13 @@ export default async function Home() {
             <p className="leading-16 py-4 text-center text-muted-foreground text-lg">
               Your #1 source for the latest
               <br />
-            fight card information.
+              fight card information.
             </p>
             <br />
             <br />
             
             {/* Flex container for side-by-side layout */}
-            <div className="flex flex-col sm:flex-row gap-6 w-full px-4 sm:px-0">
+            <div className="flex flex-col sm:flex-row gap-6 w-full sm:px-0">
               {/* MMA Section */}
               <div className="w-full sm:w-1/2">
                 <Suspense fallback={<div>Loading MMA fights...</div>}>
