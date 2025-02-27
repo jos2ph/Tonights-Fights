@@ -50,9 +50,10 @@ export default function BOXING({ boxingData }: BOXINGProps) {
 
   return (
     <Card className="w-[400px] sm:w-full sm:h-auto sm:pb-6">
-      <CardHeader className="border-b mb-4">
+      <CardHeader className="border-b mb-4 mx-10 text-md">
         <CardTitle>🥊 Upcoming Boxing Events</CardTitle>
-        <CardDescription>Top Rank Boxing, Matchroom, ProBoxTV, Queensberry</CardDescription>
+        <CardDescription>Top Rank Boxing, Matchroom, OTX,
+        ProBox TV, Queensberry, Riyahd Season, Golden Boy, MVP</CardDescription>
       </CardHeader>
       <CardContent>
         {boxingData.map(({ title, date, fights }, index) => (

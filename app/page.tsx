@@ -1,24 +1,9 @@
 import Layout from "@/components/Layout";
-import MMA from "@/components/FightAccordion";
 import Boxing from "@/components/BoxingAccordion";
 import { Suspense } from "react";
 
 export default async function Home() {
   try {
-    const response = await fetch("https://mma-fights-api-production.up.railway.app/", {
-      cache: "no-store",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const responseData = await response.json();
-    const mmaData = responseData.data;
-
     const boxingResponse = await fetch("https://boxing-fights-api-production.up.railway.app", {
       cache: "no-store",
       headers: {
@@ -42,7 +27,7 @@ export default async function Home() {
             <h1 className="text-4xl font-extrabold tracking-tight text-center lg:text-5xl">
               Your go-to source
               <br />
-              for Boxing and MMA
+              for Boxing
               <br />
               event information.
             </h1>
@@ -53,16 +38,9 @@ export default async function Home() {
             </p>
             <br />
             <br />
-            
-            {/* Flex container for side-by-side layout */}
-            <div className="flex flex-col sm:flex-row gap-6 w-full sm:px-0">
-              {/* MMA Section */}
-              <div className="w-full sm:w-1/2">
-                <Suspense fallback={<div>Loading MMA fights...</div>}>
-                  <MMA mmaData={mmaData} />
-                </Suspense>
-              </div>
 
+            {/* Flex container for centering the Boxing Section */}
+            <div className="flex justify-center items-center w-full">
               {/* Boxing Section */}
               <div className="w-full sm:w-1/2">
                 {boxingData && boxingData.length > 0 ? (
@@ -86,7 +64,7 @@ export default async function Home() {
           Error loading data
         </h1>
         <p className="text-gray-200">
-          Failed to fetch MMA or boxing event information. Please try again later.
+          Failed to fetch boxing event information. Please try again later.
         </p>
       </div>
     );
