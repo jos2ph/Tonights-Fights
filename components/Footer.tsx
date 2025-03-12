@@ -6,7 +6,7 @@ const Footer = () => {
         <a href="https://jos2ph.com/">
           <b>jos2ph.com</b>
         </a>{" "}
-        → All Rights Reserved → Created by Joseph Torres
+        → All Rights Reserved.
       </footer>
     </div>
   );
