@@ -4,12 +4,15 @@ import { Suspense } from "react";
 
 export default async function Home() {
   try {
-    const boxingResponse = await fetch("https://boxing-fights-api-production.up.railway.app", {
-      cache: "no-store",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const boxingResponse = await fetch(
+      "https://boxing-fights-api-production.up.railway.app",
+      {
+        cache: "no-store",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     if (!boxingResponse.ok) {
       throw new Error(`HTTP error! status: ${boxingResponse.status}`);
@@ -32,9 +35,9 @@ export default async function Home() {
               event information.
             </h1>
             <p className="leading-16 py-4 text-center text-muted-foreground text-lg">
-              Your #1 source for the latest
+              Never miss a punch—
               <br />
-              fight card information.
+              get the latest bout lineups here.
             </p>
             <br />
             <br />
@@ -48,7 +51,9 @@ export default async function Home() {
                     <Boxing boxingData={boxingData} />
                   </Suspense>
                 ) : (
-                  <div className="text-center text-red-500">No boxing data available at this time.</div>
+                  <div className="text-center text-red-500">
+                    No boxing data available at this time.
+                  </div>
                 )}
               </div>
             </div>
