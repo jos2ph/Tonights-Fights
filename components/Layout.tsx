@@ -10,7 +10,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className="flex flex-col text-center min-h-screen">
       <header>
         <h1 className="py-4 border-b cursor-pointer">
-          <a href="mailto:contact.jtor@gmail.com">
+          <a href="mailto:tonightsfights@proton.me">
             <b>Need Advertising?</b> This space could be yours, reserve your
             adspace today -<b> Email Me!</b>
           </a>

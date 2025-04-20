@@ -51,11 +51,10 @@ export default function BOXING({ boxingData }: BOXINGProps) {
   return (
     <Card className="w-[400px] sm:w-full sm:h-auto sm:pb-6">
       <CardHeader className="border-b mb-4 mx-10 text-md">
-        <CardTitle>🥊 Upcoming Boxing Events</CardTitle>
-        <CardDescription>
-          Top Rank Boxing, Matchroom Boxing, OTX Boxing, ProBox TV, Queensberry
-          Promotions, Riyahd Season, Golden Boy, Most Valuable Promotions, etc.
-        </CardDescription>
+        <CardTitle className="text-xl font-extrabold tracking-tight">
+          🥊 Upcoming Cards 🥊
+        </CardTitle>
+        <CardDescription>MMA Coming Soon!</CardDescription>
       </CardHeader>
       <CardContent>
         {boxingData.map(({ title, date, fights }, index) => (
