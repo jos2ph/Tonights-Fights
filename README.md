@@ -1,6 +1,9 @@
-# Tonight's Fights - (Single Page Application)
+# TonightsFights.Net
 ## Summary
-Tonight’s Fights is a web application that provides real-time information about upcoming boxing events. Built with Next.js, it integrates external APIs to fetch fight schedules, utilizes a modern UI framework, and is deployed seamlessly with Vercel.
+TonightsFights.Net is a web application that provides real-time information about upcoming boxing events. Built with Next.js, it integrates external APIs to fetch fight schedules, utilizes a modern UI framework, and is deployed seamlessly with Vercel.
+
+![Screenshot From 2025-06-02 18-51-22](https://github.com/user-attachments/assets/a0c71ce6-1fef-4d29-b33a-ace01f511a0f)
+
 
 ## Project Overview
 ### Features
@@ -12,21 +15,6 @@ Tonight’s Fights is a web application that provides real-time information abou
 ### Tech Stack
 - Frontend: Next.js (React), Shadcn UI, Tailwind CSS
 - Backend: TypeScript, Next.js API Routes
-- API: Boxing-Events-API (REST)
+- API: RingIntel API
 - Deployment: Vercel (AWS)
-
-## 🤝 Contributing
-Want to contribute? Feel free to open a PR!
-- Fork the repo
-- Create a new branch: git checkout -b feature-name
-- Commit your changes: git commit -m "Added new feature"
-- Push & submit a PR
-
-```
-████████╗ ██████╗ ███╗   ██╗██╗ ██████╗ ██╗  ██╗████████╗███████╗    ███████╗██╗ ██████╗ ██╗  ██╗████████╗███████╗
-╚══██╔══╝██╔═══██╗████╗  ██║██║██╔════╝ ██║  ██║╚══██╔══╝██╔════╝    ██╔════╝██║██╔════╝ ██║  ██║╚══██╔══╝██╔════╝
-   ██║   ██║   ██║██╔██╗ ██║██║██║  ███╗███████║   ██║   ███████╗    █████╗  ██║██║  ███╗███████║   ██║   ███████╗
-   ██║   ██║   ██║██║╚██╗██║██║██║   ██║██╔══██║   ██║   ╚════██║    ██╔══╝  ██║██║   ██║██╔══██║   ██║   ╚════██║
-   ██║   ╚██████╔╝██║ ╚████║██║╚██████╔╝██║  ██║   ██║   ███████║    ██║     ██║╚██████╔╝██║  ██║   ██║   ███████║
-   ╚═╝    ╚═════╝ ╚═╝  ╚═══╝╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝    ╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝
-                                                                                                                  
+---
